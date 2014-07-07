@@ -1,0 +1,169 @@
+@import "base";
+
+$default-border-radius: 20px;
+$default-house-width: 400px;
+$default-house-height: 200px;
+$default-room-width: 100px;
+$default-room-height: 100px;
+
+.nojs-message {
+  display: none;
+}
+
+#main-header {
+  text-align: center;
+  background-color: #EAEAEA;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  @include box-shadow(0 0 20px 5px #333);
+
+  .house {
+	width: $default-house-width;
+	height: $default-house-height;
+	background-color: #000;
+	position: relative;
+	border: 1rem solid #000;
+	@include inline-block;
+	@include border-radius();
+	@include background-clip(border-box);
+	//	@include box-shadow(inset 0 0 3px 3px #333);
+
+	.room {
+	  font-family: Ubuntu, 'Trebuchet MS', sans-serif;
+	  font-weight: bold;
+	  font-size: 1rem;
+	  width: $default-room-width;
+	  padding-top: $default-room-height / 2 - $base-font-size / 2;
+	  padding-bottom: $default-room-height / 2 - $base-font-size / 2;
+	  margin: 0 !important;
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  cursor: default;
+	  cursor: pointer;
+	  border: none;
+	  vertical-align: middle;
+	  overflow-wrap: normal;
+	  @include inline-block;
+	  @include opacity(0.4);
+	  @include background-clip(border-box);
+
+	  &:hover {
+		@include box-shadow(inset 0 0 10px 0 #333);
+		@include opaque;
+	  }
+	}
+
+	.room-hover {
+	  @extend .room:hover;
+	}
+
+	.room-1 {
+	  left: 300px;
+	  @include border-top-right-radius();
+	  background: #F2FF66 -300px 0;
+	}
+
+	.room-2 {
+	  background: #5CB0E6 -200px 0;
+	  left: 200px;
+	}
+
+	.room-3 {
+	  background: #9BEF60 -100px -100px;
+	  top: 100px;
+	  left: 100px;
+	}
+
+	.room-4 {
+	  background: #FF8066;
+	  width: $default-room-width * 2;
+	  @include border-top-left-radius();
+	}
+
+  }
+}
+
+.main-header-scroll {
+  @include box-shadow(0 0 20px 15px #333);
+}
+
+$max-content-width: 900px;
+$min-content-height: 1000px;
+
+#body {
+  height: 65%;
+  width: 100%;
+  overflow-wrap: normal;
+  overflow-style: scrollbar;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  margin-top: $default-house-height + $base-font-size * 3;
+  padding-bottom: 2rem;
+}
+
+#main-content {
+  position: relative;
+  background-color: #C08141;
+  max-width: $max-content-width;
+  margin: 0 auto 4rem;
+  @include min-height($min-content-height);
+  @include box-shadow(0 0 3px 3px #333);
+  @include border-bottom-radius;
+
+  .room-heading {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+
+  .content {
+	text-align: justify;
+	padding: 1rem;
+
+	p {
+	  margin-top: 0.5rem;
+	  margin-bottom: 0.5rem;
+	  text-indent: 10%;
+	  white-space: normal;
+	  overflow-wrap: normal;
+	}
+
+	ul {
+	  list-style-type: none;
+
+	  li {
+		padding-top: 0.2rem;
+		padding-bottom: 0.2rem;
+	  }
+
+	}
+
+	.general-info > li, .specific-info > li {
+	  &:last-child {
+		text-align: center;
+	  }
+	}
+  }
+}
+
+#main-footer {
+  text-align: center;
+  margin-top: 0.5rem;
+  background-color: #080808;
+  color: #FFF;
+  line-height: 1rem;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+
+  .content {
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
+  }
+}

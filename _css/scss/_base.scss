@@ -1,0 +1,47 @@
+@charset "UTF-8";
+@import "vendor/html5reset-1.6.1";
+@import "vendor/font-awesome";
+@import "compass";
+
+// compass watch --time -c config.rb -e development -s expanded --debug-info
+// compass watch --time -c config.rb -e production -s compressed --no-debug-info
+
+h1, h2, h3, h4, h5, h6 { padding: 1rem; }
+
+h1 { font-size: 3rem; text-align: center; }
+
+h2 { font-size: 2rem; }
+
+h3 { font-size: 1.5rem; }
+
+h4 { font-size: 0.1rem; }
+
+h5 { font-size: 0.8rem; }
+
+h6 { font-size: 0.6rem; }
+
+$base-font-size: 20px;
+$base-line-height: 24px;
+
+html, body {
+  font-size: $base-font-size;
+  font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif;
+//  overflow-y: hidden;
+}
+
+a {
+  &:link, &:visited {
+	color: #FFF;
+	text-decoration: none;
+	&:hover {
+	  color: #2DFFED;
+	}
+  }
+}
+
+.fa {
+  //  padding-right: 0.5rem; // Gap between Icon & Text
+  //  margin-left: -1.5rem;
+  //  visibility: hidden;
+  //  display: none;
+}
