@@ -114,7 +114,7 @@ $min-content-height: 1000px;
   margin: 0 auto 4rem;
   @include min-height($min-content-height);
   @include box-shadow(0 0 3px 3px #333);
-  @include border-bottom-radius;
+  @include border-bottom-radius(20px);
 
   .room-heading {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
